@@ -65,12 +65,14 @@ namespace EventHandler {
 
     void handleFriendRequestEvent(const shared_ptr<Bot> &bot,
                                   const FriendRequestEvent &event) {
-
+        // 同意所有好友
+        // bot->setFriendAddRequest(event.flag(), true, "ok");
     }
 
     void handleGroupRequestEvent(const shared_ptr<Bot> &bot,
                                  const GroupRequestEvent &event) {
-
+        // 拒绝所有加群请求
+        // bot->setGroupAddRequest(event.flag(), event.sub_type(), event.post_type(), false, "no");
     }
 
 }
