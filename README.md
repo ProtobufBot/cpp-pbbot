@@ -70,7 +70,7 @@ $ ./vcpkg/vcpkg install drogon
 - [x] 设置成员名片 setGroupCard
 - [x] 退群 setGroupLeave
 - [x] 处理加好友请求 setFriendAddRequest
-- [ ] 处理加群请求
+- [x] 处理加群请求 setGroupAddRequest
 - [x] 获取好友列表 getFriendList
 - [x] 获取陌生人信息 getStrangerInfo
 - [x] 获取群列表 getGroupList

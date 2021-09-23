@@ -162,6 +162,20 @@ shared_ptr<SetFriendAddRequestResp> Bot::setFriendAddRequest(string flag, bool a
     return make_shared<SetFriendAddRequestResp>(sendAndWait(reqFrame)->set_friend_add_request_resp());
 }
 
+shared_ptr<SetGroupAddRequestResp> Bot::setGroupAddRequest(string flag, string sub_type, string type, bool approve, string reason) {
+    auto req = new SetGroupAddRequestReq(); // 不用delete，frame自动delete
+    req->set_flag(flag);
+    req->set_sub_type(sub_type);
+    req->set_type(type);
+    req->set_approve(approve);
+    req->set_reason(reason);
+
+    auto reqFrame = make_shared<onebot::Frame>(onebot::Frame());
+    reqFrame->set_frame_type(Frame_FrameType_TSetGroupAddRequestReq);
+    reqFrame->set_allocated_set_group_add_request_req(req);
+    return make_shared<SetGroupAddRequestResp>(sendAndWait(reqFrame)->set_group_add_request_resp());
+}
+
 shared_ptr<GetLoginInfoResp> Bot::getLoginInfo() {
     auto reqFrame = make_shared<onebot::Frame>(onebot::Frame());
     reqFrame->set_frame_type(Frame_FrameType_TGetLoginInfoReq);

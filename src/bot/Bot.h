@@ -49,6 +49,8 @@ public:
 
     shared_ptr<SetFriendAddRequestResp> setFriendAddRequest(string flag, bool approve, string remark);
 
+    shared_ptr<SetGroupAddRequestResp> setGroupAddRequest(string flag, string sub_type, string type, bool approve, string reason);
+
     shared_ptr<GetLoginInfoResp> getLoginInfo();
 
     shared_ptr<GetStrangerInfoResp> getStrangerInfo(int64 user_id);
