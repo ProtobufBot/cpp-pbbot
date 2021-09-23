@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    cout << "Waiting for Go-Mirai-Client to connect. (https://github.com/ProtobufBot/Go-Mirai-Client/releases)" << endl;
+    cout << "Waiting for Go-Mirai-Client to connect, port: 8081. (https://github.com/ProtobufBot/Go-Mirai-Client/releases)" << endl;
     drogon::app()
             .addListener("0.0.0.0", 8081)
             .run();

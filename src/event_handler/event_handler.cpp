@@ -8,7 +8,7 @@ namespace EventHandler {
 
     void handlePrivateMessageEvent(const shared_ptr<Bot> &bot,
                                    const PrivateMessageEvent &event) {
-        auto resp = bot->sendPrivateMsg(875543533l, "1", false);
+        auto resp = bot->sendPrivateMsg(event.user_id(), "1", false);
         cout << resp->message_id() << endl;
     }
 
