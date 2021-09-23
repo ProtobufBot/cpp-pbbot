@@ -37,3 +37,43 @@ $ ./vcpkg/vcpkg install drogon
 2. 接受binary消息，使用protobuf解析，开新线程，交给`event_handler.cpp`处理
 
 3. 发送消息保存promise在map，接收到相同echo的response后 完成promise，继续处理
+
+## 支持的类型
+
+### Event（被动接受）
+
+代码在 [event_handler.cpp](https://github.com/ProtobufBot/cpp-pbbot/blob/main/src/event_handler/event_handler.cpp)
+
+- [x] 私聊消息 handlePrivateMessageEvent
+- [x] 群聊消息 handleGroupMessageEvent
+- [x] 群文件上传通知 handleGroupUploadNoticeEvent
+- [x] 管理员变动通知 handleGroupAdminNoticeEvent
+- [x] 群成员减少通知 handleGroupDecreaseNoticeEvent
+- [x] 群成员增加通知 handleGroupIncreaseNoticeEvent
+- [x] 群成员被禁言通知 handleGroupBanNoticeEvent
+- [x] 好友已添加通知 handleFriendAddNoticeEvent
+- [x] 群消息撤回通知 handleGroupRecallNoticeEvent
+- [x] 好友撤回通知 handleFriendRecallNoticeEvent
+- [x] 加好友请求 handleFriendRequestEvent
+- [x] 加群请求 handleGroupRequestEvent
+
+### API（主动执行）
+
+代码在 [Bot.cpp](https://github.com/ProtobufBot/cpp-pbbot/blob/main/src/bot/Bot.cpp)
+
+- [x] 发送私聊消息 sendPrivateMsg
+- [x] 发送群消息 sendGroupMsg
+- [x] 撤回消息 deleteMsg
+- [x] 群踢人 setGroupKick
+- [x] 群禁言 setGroupBan
+- [x] 全群禁言 setGroupWholeBan
+- [x] 设置成员名片 setGroupCard
+- [x] 退群 setGroupLeave
+- [x] 处理加好友请求 setFriendAddRequest
+- [ ] 处理加群请求
+- [x] 获取好友列表 getFriendList
+- [x] 获取陌生人信息 getStrangerInfo
+- [x] 获取群列表 getGroupList
+- [x] 获取群信息 getGroupInfo
+- [x] 获取群成员信息 getGroupMemberInfo
+- [x] 获取群成员列表 getGroupMemberList
