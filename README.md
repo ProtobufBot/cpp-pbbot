@@ -42,7 +42,7 @@ $ ./vcpkg/vcpkg install drogon
 
 ### Event（被动接受）
 
-代码在 [event_handler.cpp](https://github.com/ProtobufBot/cpp-pbbot/blob/main/src/event_handler/event_handler.cpp)
+代码在 [event_handler.cpp](https://github.com/ProtobufBot/cpp-pbbot/blob/main/src/event_handler/event_handler.cpp)，建议直接基于这个修改
 
 - [x] 私聊消息 handlePrivateMessageEvent
 - [x] 群聊消息 handleGroupMessageEvent
